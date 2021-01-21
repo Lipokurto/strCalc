@@ -1,0 +1,18 @@
+.wrapper-stick {
+    display: flex;  
+    width: 100%;
+}
+
+.erese {
+    height: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 10;
+    background-color: rgb(90, 63, 0);
+    color:rgb(255, 255, 255);
+    flex: 1;
+    outline: 1px solid #888888;
+}
