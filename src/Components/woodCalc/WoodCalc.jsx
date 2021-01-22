@@ -5,26 +5,25 @@ import InputPrice from './Elements/InputPrice'
 import Buttons from './Elements/Buttons'
 
 class WoodCalc extends Component {
+  
   constructor(props) {
     super(props)
-    // debugger
     this.state = {
-        // value01:props.appState.size,
-        value: '',
-        price:[0,0,0,0,0],
-        size:['100*25*6000','150*25*6000','50*50*6000','50*100*6000','100*100*6000'],
-        cauntIn:[66,44,66,33,16]
+        value: props.appState.value,
+        price:props.appState.price,
+        size:props.appState.size,
+        cauntIn:props.appState.cauntIn
     };
     this.handleChange = this.handleChange.bind(this)
     this.clearInput = this.clearInput.bind(this)
   }
   
   handleChange(event) {
-    //   console.log(this.state.value01)
     let val = event.nativeEvent.data
     if(!isNaN(parseInt(val))) {
       this.setState({value: event.target.value})
       let d = this.state.price.slice()
+      console.log(this.props.appState.value)
       for (let i=0; i<this.state.price.length;i++) {
         d[i]=(event.target.value / this.state.cauntIn[i]).toFixed(2)
         this.setState({price:d})
