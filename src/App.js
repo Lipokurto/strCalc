@@ -2,14 +2,14 @@ import React,{ Component } from 'react'
 import './App.css';
 import WoodCalc from './Components/woodCalc/WoodCalc'
 
-class App extends Component {
-  render() { 
+
+const App =(props)=>  {
     return (
       <div>
-        <WoodCalc />
+        <WoodCalc appState={props.appState.calcWood}/>
       </div>
-    );
+    )
   }
-}
+
 
 export default App;

@@ -1,23 +1,26 @@
 import React,{ Component } from 'react'
 import './WoodCalc.css';
-import PriceStick from './PriceStick'
-import InputPrice from './InputPrice'
-import Buttons from './Buttons'
+import PriceStick from './Elements/PriceStick'
+import InputPrice from './Elements/InputPrice'
+import Buttons from './Elements/Buttons'
 
 class WoodCalc extends Component {
   constructor(props) {
     super(props)
+    // debugger
     this.state = {
-      value: '',
-      price:[0,0,0,0,0],
-      size:['100*25*6000','150*25*6000','50*50*6000','50*100*6000','100*100*6000'],
-      cauntIn:[66,44,66,33,16]
+        // value01:props.appState.size,
+        value: '',
+        price:[0,0,0,0,0],
+        size:['100*25*6000','150*25*6000','50*50*6000','50*100*6000','100*100*6000'],
+        cauntIn:[66,44,66,33,16]
     };
     this.handleChange = this.handleChange.bind(this)
     this.clearInput = this.clearInput.bind(this)
   }
   
   handleChange(event) {
+    //   console.log(this.state.value01)
     let val = event.nativeEvent.data
     if(!isNaN(parseInt(val))) {
       this.setState({value: event.target.value})
