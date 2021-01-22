@@ -15,26 +15,19 @@ class App extends Component {
     };  
     this.handleChange = this.handleChange.bind(this);
   }
+  
   handleChange(event) {
-    
     let val = event.nativeEvent.data
-    if(isNaN(parseInt(val))) {
-      this.setState({value: this.state.value})
-      let d = this.state.price.slice()
-      for (let i=0; i<this.state.price.length;i++) {
-        d[i] = (this.state.value / this.state.cauntIn[i]).toFixed(2)
-        this.setState({price:d})
-      }
-    } else {
+    if(!isNaN(parseInt(val))) {
       this.setState({value: event.target.value})
       let d = this.state.price.slice()
       for (let i=0; i<this.state.price.length;i++) {
         d[i]=(event.target.value / this.state.cauntIn[i]).toFixed(2)
         this.setState({price:d})
       }
-      debugger
-    }
+    } 
   }
+
   render() { 
     return (
       <div className='calc-wrapper'>
