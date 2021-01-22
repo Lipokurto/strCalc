@@ -13,7 +13,8 @@ class App extends Component {
       size:['100*25*6000','150*25*6000','50*50*6000','50*100*6000','100*100*6000'],
       cauntIn:[66,44,66,33,16]
     };  
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.clearInput = this.clearInput.bind(this)
   }
   
   handleChange(event) {
@@ -28,6 +29,14 @@ class App extends Component {
     } 
   }
 
+  clearInput() {
+    let d = this.state.price.slice()
+    for (let i=0; i<this.state.price.length;i++) {
+      d[i]=(0).toFixed(2)
+      this.setState({value:'',price:d})
+    }
+  }
+
   render() { 
     return (
       <div className='calc-wrapper'>
@@ -38,13 +47,7 @@ class App extends Component {
                   {this.state.size[index]}
                   </PriceStick>
                   )}
-            <Buttons onClickEre={()=>
-            this.setState({value:'',
-            price1: (0).toFixed(2),
-            price2: (0).toFixed(2),
-            price3: (0).toFixed(2),
-            price4: (0).toFixed(2),
-            price5: (0).toFixed(2)})}/>
+            <Buttons onClickEre={this.clearInput}/>
         </div>
       </div>
     );
