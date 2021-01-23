@@ -17,7 +17,7 @@ const App =(props)=>  {
             <Header />
             <div className='app-wrapper-content'>
               <Route path='/main' render={ () => <MainPage  />}/>
-              <Route path='/furniture' render={ () => <Furniture  />}/>
+              <Route path='/furniture' render={ () => <Furniture  appState={props.appState}/>}/>
               <Route path='/defense' render={ () => <Defense  />}/>
               <Route path='/camp' render={ () => <Camp  />}/>
               <Route path='/decor' render={ () => <Decor  />}/>
