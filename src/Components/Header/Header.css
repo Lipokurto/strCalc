@@ -1,0 +1,11 @@
+.head-wrapper {
+    grid-area: h;
+    background-color: blueviolet;
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.nav {
+    text-decoration: none;
+}
